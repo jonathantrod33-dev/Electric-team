@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Electric Team | Gestión Técnica Unificada</title>
+    <link
+      rel="shortcut icon"
+      href="landing page css/imagenes/unsplash.jpg"
+      type="image/x-icon"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config con colores Naranja/Negro -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              naranja: {
+                principal: "#FF6600",
+                hover: "#E65C00",
+                claro: "#FF8533",
+              },
+              negro: {
+                principal: "#1A1A1A",
+                medio: "#2D2D2D",
+                claro: "#404040",
+              },
+            },
+            fontFamily: {
+              sans: ["Manrope", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="landing page css/css/estilos.css" />
+  </head>
+  <body class="antialiased bg-grid">
+    <!-- NAV -->
+    <nav
+      class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur border-b border-slate-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a href="#inicio" class="flex items-center gap-3">
+          <img
+            src="landing page css/imagenes/electric team.jpeg"
+            alt="Electric Team Logo"
+            class="w-10 h-10 object-contain"
+          />
+          <div
+            class="hidden md:block text-[10px] font-bold uppercase tracking-widest text-negro-principal leading-none"
+          >
+            <p class="mb-1 text-naranja-principal font-black">ELECTRIC TEAM</p>
+            <p class="text-slate-500 font-mono italic uppercase">
+              Gestión Técnica
+            </p>
+          </div>
+        </a>
+        <div
+          class="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-500"
+        >
+          <a
+            href="#servicios"
+            class="hover:text-negro-principal transition-colors"
+            >Servicios</a
+          >
+          <a
+            href="#garantia"
+            class="hover:text-negro-principal transition-colors"
+            >Garantía</a
+          >
+          <a
+            href="#proyectos"
+            class="hover:text-negro-principal transition-colors"
+            >Portfolio</a
+          >
+          <a href="#cotizador" class="text-naranja-principal font-black"
+            >Cotizador</a
+          >
+          <a
+            href="#contacto"
+            class="px-5 py-2.5 bg-negro-principal text-naranja-principal rounded-lg hover:bg-negro-medio transition-colors"
+            >Contacto</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      id="inicio"
+      class="min-h-[85vh] flex items-center pt-28 pb-10 px-6"
+    >
+      <div class="max-w-7xl mx-auto w-full text-center">
+        <div class="mb-16 fade-up">
+          <img
+            src="landing page css/imagenes/electric team.jpeg"
+            alt="Electric Team Logo"
+            class="w-32 h-32 md:w-40 md:h-40 object-contain mx-auto mb-6"
+          />
+
+          <div
+            class="inline-block px-3 py-1 mb-6 border border-negro-principal text-negro-principal text-[9px] font-bold uppercase tracking-[0.3em]"
+          >
+            Partner Técnico Integral GBA
+          </div>
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-negro-principal tracking-tighter leading-[1.1] mb-6 italic"
+          >
+            Gestión <span class="text-slate-400">Técnica Unificada.</span>
+          </h1>
+        </div>
+        <div
+          class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto fade-up"
+          style="animation-delay: 0.2s"
+        >
+          <div
+            class="bg-white p-10 rounded-3xl border border-slate-200 shadow-xl text-left hover:border-naranja-principal transition-all group"
+          >
+            <span class="text-naranja-principal text-[9px] font-bold uppercase"
+              >Urgencias / Residencial</span
+            >
+            <h2
+              class="text-2xl font-black text-negro-principal mt-6 mb-4 uppercase italic tracking-tighter"
+            >
+              Mantenimiento
+            </h2>
+            <p class="text-slate-500 mb-8 text-sm italic">
+              Electricidad, Albañilería y Plomería con técnicos certificados.
+            </p>
+            <a
+              href="#cotizador"
+              class="block w-full py-4 bg-negro-principal text-naranja-principal font-bold text-xs uppercase tracking-widest rounded-xl group-hover:bg-negro-medio transition-all text-center"
+              >Consultar Tarifario</a
+            >
+          </div>
+          <div
+            class="bg-negro-principal p-10 rounded-3xl shadow-xl text-white text-left relative overflow-hidden"
+          >
+            <div class="relative z-10">
+              <span
+                class="text-naranja-principal text-[9px] font-bold uppercase"
+                >Empresas & Proyectos</span
+              >
+              <h2
+                class="text-2xl font-black mt-6 mb-4 uppercase italic tracking-tighter"
+              >
+                Gestión de Obra
+              </h2>
+              <p class="text-slate-300 mb-8 text-sm italic">
+                Instalaciones integrales. Factura y gestión centralizada.
+              </p>
+              <a
+                href="https://wa.me/5491124574478"
+                class="block w-full py-4 bg-naranja-principal text-negro-principal font-bold text-xs uppercase tracking-widest rounded-xl text-center hover:bg-naranja-hover transition-colors"
+                >Consultar Ahora</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-24 bg-white border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl font-black text-negro-principal italic uppercase tracking-tighter mb-4"
+          >
+            Nuestros Servicios
+          </h2>
+          <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">
+            Soluciones técnicas integrales
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-naranja-principal text-center cursor-pointer"
+            onclick="selectRubro('Electricidad')"
+          >
+            <h3
+              class="text-lg font-black text-negro-principal mb-3 uppercase italic"
+            >
+              ⚡ Electricidad
+            </h3>
+            <ul class="text-xs text-slate-500 space-y-2 font-medium">
+              <li>• Urgencias 24hs</li>
+              <li>• Tableros y Cableado</li>
+              <li>• Certificaciones</li>
+            </ul>
+          </div>
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-naranja-principal text-center cursor-pointer"
+            onclick="selectRubro('Albañilería')"
+          >
+            <h3
+              class="text-lg font-black text-negro-principal mb-3 uppercase italic"
+            >
+              🧱 Albañilería
+            </h3>
+            <ul class="text-xs text-slate-500 space-y-2 font-medium">
+              <li>• Reparaciones</li>
+              <li>• Cerámicos / Revoques</li>
+              <li>• Pequeñas obras</li>
+            </ul>
+          </div>
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-naranja-principal text-center cursor-pointer"
+            onclick="selectRubro('Plomería')"
+          >
+            <h3
+              class="text-lg font-black text-negro-principal mb-3 uppercase italic"
+            >
+              🚰 Plomería
+            </h3>
+            <ul class="text-xs text-slate-500 space-y-2 font-medium">
+              <li>• Reparación de Fugas</li>
+              <li>• Sanitarios</li>
+              <li>• Bombas de agua</li>
+            </ul>
+          </div>
+          <div
+            class="group p-8 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-naranja-principal text-center cursor-pointer"
+            onclick="selectRubro('Mantenimiento')"
+          >
+            <h3
+              class="text-lg font-black text-negro-principal mb-3 uppercase italic"
+            >
+              🔧 Mantenimiento
+            </h3>
+            <ul class="text-xs text-slate-500 space-y-2 font-medium">
+              <li>• Pintura de Obra</li>
+              <li>• Armado de muebles</li>
+              <li>• Varios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Garantía y Metodología -->
+    <section id="garantia" class="py-24 bg-negro-principal text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              class="text-3xl font-black italic uppercase tracking-tighter mb-6"
+            >
+              Tranquilidad
+              <span class="text-naranja-principal">Garantizada</span>.
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed mb-10">
+              En Electric Team entendemos que dejar entrar a alguien a tu casa o
+              empresa requiere confianza. Por eso, trabajamos bajo estrictos
+              estándares de seguridad.
+            </p>
+
+            <div class="space-y-10">
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-12 h-12 rounded-full bg-naranja-principal text-negro-principal flex items-center justify-center font-bold font-mono text-xl shrink-0"
+                >
+                  1
+                </div>
+                <div>
+                  <h4
+                    class="font-bold uppercase text-sm tracking-widest mb-1 leading-none text-naranja-principal"
+                  >
+                    Técnicos Matriculados
+                  </h4>
+                  <p class="text-xs text-slate-300 uppercase font-medium">
+                    Profesionales certificados.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-12 h-12 rounded-full bg-naranja-principal text-negro-principal flex items-center justify-center font-bold font-mono text-xl shrink-0"
+                >
+                  2
+                </div>
+                <div>
+                  <h4
+                    class="font-bold uppercase text-sm tracking-widest mb-1 leading-none text-naranja-principal"
+                  >
+                    Garantía Escrita
+                  </h4>
+                  <p class="text-xs text-slate-300 uppercase font-medium">
+                    Respaldo total sobre mano de obra.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-12 h-12 rounded-full bg-naranja-principal text-negro-principal flex items-center justify-center font-bold font-mono text-xl shrink-0"
+                >
+                  3
+                </div>
+                <div>
+                  <h4
+                    class="font-bold uppercase text-sm tracking-widest mb-1 leading-none text-naranja-principal"
+                  >
+                    Presupuestos Claros
+                  </h4>
+                  <p class="text-xs text-slate-300 uppercase font-medium">
+                    Sin sorpresas. Sabés lo que pagás.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metodología -->
+          <div
+            class="bg-white/5 p-12 rounded-[3rem] border border-white/10 shadow-2xl backdrop-blur-sm"
+          >
+            <h3
+              class="text-2xl font-black italic uppercase mb-10 text-center tracking-wider text-naranja-principal"
+            >
+              Metodología
+            </h3>
+            <div class="space-y-6">
+              <div
+                class="bg-negro-medio/40 p-6 rounded-2xl flex items-center gap-6 border border-white/5"
+              >
+                <div
+                  class="w-10 h-10 flex items-center justify-center border border-naranja-principal rounded-full text-xs font-bold text-naranja-principal shrink-0"
+                >
+                  01
+                </div>
+                <div>
+                  <strong
+                    class="block uppercase text-naranja-principal text-xs tracking-widest mb-1"
+                    >Contacto</strong
+                  >
+                  <p class="text-xs text-slate-300">
+                    WhatsApp o uso del cotizador online.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-negro-medio/40 p-6 rounded-2xl flex items-center gap-6 border border-white/5"
+              >
+                <div
+                  class="w-10 h-10 flex items-center justify-center border border-naranja-principal rounded-full text-xs font-bold text-naranja-principal shrink-0"
+                >
+                  02
+                </div>
+                <div>
+                  <strong
+                    class="block uppercase text-naranja-principal text-xs tracking-widest mb-1"
+                    >Diagnóstico</strong
+                  >
+                  <p class="text-xs text-slate-300">
+                    Evaluación precisa del problema.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-negro-medio/40 p-6 rounded-2xl flex items-center gap-6 border border-white/5"
+              >
+                <div
+                  class="w-10 h-10 flex items-center justify-center border border-naranja-principal rounded-full text-xs font-bold text-naranja-principal shrink-0"
+                >
+                  03
+                </div>
+                <div>
+                  <strong
+                    class="block uppercase text-naranja-principal text-xs tracking-widest mb-1"
+                    >Solución</strong
+                  >
+                  <p class="text-xs text-slate-300">
+                    Ejecución limpia y garantizada.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <!-- Portfolio -->
+    <section
+      id="proyectos"
+      class="py-24 bg-slate-50 overflow-hidden border-b border-slate-100"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-3xl font-black text-negro-principal tracking-tighter italic uppercase mb-12"
+        >
+          Portfolio Técnico
+        </h2>
+
+        <div class="portfolio-mural">
+          <!-- FOTO 1 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/pilar.jpeg"
+              alt="Trabajo 1"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Instalación Eléctrica
+            </div>
+          </div>
+
+          <!-- FOTO 2 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/overall.jpeg"
+              alt="Trabajo 2"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Reparación Plomería
+            </div>
+          </div>
+
+          <!-- FOTO 3 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/albañileria.jpeg"
+              alt="Trabajo 3"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Albañilería General
+            </div>
+          </div>
+
+          <!-- FOTO 4 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/techo.jpeg"
+              alt="Trabajo 4"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Mantenimiento
+            </div>
+          </div>
+
+          <!-- FOTO 5 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/ElectricistaCG.jpg"
+              alt="Trabajo 5"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Tablero Eléctrico
+            </div>
+          </div>
+
+          <!-- FOTO 6 -->
+          <div class="mural-card group">
+            <img
+              src="landing page css/imagenes/soldar.jpeg"
+              alt="Trabajo 6"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-0 left-0 bg-negro-principal/80 p-2 w-full text-white text-[9px] font-bold uppercase"
+            >
+              Herrería
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cotizador -->
+    <section id="cotizador" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16 italic">
+          <h2
+            class="text-4xl font-black text-negro-principal mb-2 uppercase tracking-tighter"
+          >
+            Cotizador Online
+          </h2>
+          <p
+            class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em]"
+          >
+            Mano de Obra Certificada • Valores 2026
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <div>
+              <h4
+                class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 italic"
+              >
+                1. Seleccione Gremio
+              </h4>
+              <div
+                id="trade-container"
+                class="grid grid-cols-2 md:grid-cols-4 gap-3"
+              ></div>
+            </div>
+
+            <div id="category-step" class="hidden">
+              <h4
+                class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 italic"
+              >
+                2. Seleccione Categoría
+              </h4>
+              <div id="category-container" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div id="task-step" class="hidden">
+              <h4
+                class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4 italic"
+              >
+                3. Elija la Tarea
+              </h4>
+              <div
+                id="task-container"
+                class="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-negro-principal rounded-[2.5rem] p-8 text-white shadow-2xl flex flex-col h-fit sticky top-28"
+          >
+            <div
+              class="flex justify-between items-center mb-6 border-b border-white/10 pb-4"
+            >
+              <h3
+                class="text-xs font-bold uppercase tracking-widest text-slate-400 italic font-mono uppercase"
+              >
+                Resumen
+              </h3>
+              <button
+                onclick="borrarTodo()"
+                class="text-[9px] text-red-400 font-black uppercase italic hover:text-red-300"
+              >
+                Borrar
+              </button>
+            </div>
+
+            <div
+              id="listaItems"
+              class="space-y-4 mb-8 max-h-[250px] overflow-y-auto pr-2 custom-scroll"
+            >
+              <p
+                class="text-slate-500 text-center py-10 text-[10px] uppercase italic leading-loose"
+              >
+                Sin servicios seleccionados
+              </p>
+            </div>
+
+            <div class="space-y-3 mb-8 border-t border-white/10 pt-6">
+              <h4
+                class="text-[9px] font-black uppercase text-slate-500 tracking-[0.2em] mb-1 italic"
+              >
+                Datos Obligatorios
+              </h4>
+              <input
+                type="text"
+                id="quote-name"
+                placeholder="Nombre completo"
+                required
+                class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-xs outline-none focus:border-naranja-principal text-white placeholder:text-slate-600"
+              />
+              <input
+                type="tel"
+                id="quote-phone"
+                placeholder="WhatsApp"
+                required
+                class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-xs outline-none focus:border-naranja-principal text-white placeholder:text-slate-600"
+              />
+              <input
+                type="email"
+                id="quote-email"
+                placeholder="Email de contacto"
+                required
+                class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-xs outline-none focus:border-naranja-principal text-white placeholder:text-slate-600"
+              />
+              <select
+                id="quote-time"
+                required
+                class="w-full p-3 bg-white/5 border border-white/10 rounded-xl text-xs outline-none focus:border-naranja-principal text-slate-400"
+              >
+                <option value="" disabled selected>Plazo de inicio...</option>
+                <option value="Urgente">Urgente (48hs)</option>
+                <option value="Proximos dias">Próximos días</option>
+                <option value="Este mes">Este mes</option>
+                <option value="Planificado">Planificado</option>
+              </select>
+            </div>
+
+            <div class="pt-6 border-t border-white/10">
+              <div class="flex justify-between items-end mb-6">
+                <span
+                  class="text-[10px] text-slate-500 uppercase font-black italic"
+                  >Total Inversión</span
+                >
+                <span
+                  id="totalDisplay"
+                  class="text-3xl font-black text-naranja-principal tracking-tighter leading-none"
+                  >$ 0</span
+                >
+              </div>
+              <div class="grid gap-3">
+                <button
+                  onclick="enviarWhatsapp()"
+                  class="bg-[#25D366] text-white py-4 rounded-xl font-black text-[10px] uppercase shadow-lg hover:scale-[1.02] transition-all italic"
+                >
+                  WhatsApp
+                </button>
+                <button
+                  onclick="generarPDF()"
+                  class="bg-white/10 text-naranja-principal py-4 rounded-xl font-black text-[10px] uppercase border border-white/5 italic hover:bg-white/20 transition"
+                >
+                  PDF Oficial
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 bg-white border-t border-slate-100">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2
+          class="text-3xl font-black text-negro-principal italic uppercase tracking-tighter mb-4"
+        >
+          Contacto
+        </h2>
+        <p
+          class="text-slate-400 text-xs font-bold mb-16 uppercase tracking-widest italic leading-relaxed"
+        >
+          Respondemos a todas las consultas en el día.
+        </p>
+
+        <form
+          id="mainContactForm"
+          class="grid gap-6 p-10 md:p-14 rounded-[3rem] bg-slate-50 border-2 border-slate-100 shadow-xl text-left"
+        >
+          <div class="grid md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Tu Nombre / Empresa"
+              class="p-4 border rounded-2xl bg-white shadow-sm outline-none focus:ring-2 focus:ring-negro-principal text-sm font-semibold"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="WhatsApp"
+              class="p-4 border rounded-2xl bg-white shadow-sm outline-none focus:ring-2 focus:ring-negro-principal text-sm font-semibold"
+            />
+          </div>
+          <textarea
+            id="ai-project-desc"
+            name="msg"
+            placeholder="Describa el trabajo técnico detalladamente..."
+            rows="4"
+            class="p-4 border rounded-2xl bg-white shadow-sm outline-none focus:ring-2 focus:ring-negro-principal text-sm font-medium"
+          ></textarea>
+          <div class="flex justify-end">
+            <button
+              type="button"
+              onclick="analyzeAndSend()"
+              id="btnSubmitAi"
+              class="py-4 px-10 bg-negro-principal text-naranja-principal font-black text-xs uppercase tracking-widest rounded-xl hover:bg-negro-medio transition-all shadow-lg italic"
+            >
+              Enviar Consulta
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <div class="floating-container">
+      <a
+        href="https://wa.me/5491124574478"
+        class="btn-wa shadow-xl"
+        target="_blank"
+      >
+        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <footer
+      class="py-12 bg-white border-t border-slate-100 text-center text-slate-400 text-[10px] font-black uppercase italic tracking-[0.4em]"
+    >
+      © 2026 ELECTRIC TEAM • GBA ARGENTINA
+    </footer>
+
+    <!-- JS Externo -->
+    <script src="landing page css/js/cotizador.js"></script>
+  </body>
+</html>

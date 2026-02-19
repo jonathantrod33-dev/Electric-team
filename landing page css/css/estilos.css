@@ -1,0 +1,130 @@
+/* ===== BASE ===== */
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #ffffff;
+  color: #003366;
+  overflow-x: hidden;
+}
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Fondo grid */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===== PORTFOLIO MURAL ===== */
+.portfolio-mural {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 620px;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  scrollbar-width: thin;
+}
+.portfolio-mural::-webkit-scrollbar {
+  height: 4px;
+}
+.portfolio-mural::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+.mural-card {
+  width: 300px;
+  height: calc(33.33% - 0.7rem);
+  flex-shrink: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f1f5f9;
+  position: relative;
+}
+
+/* ===== WHATSAPP FLOTANTE ===== */
+.floating-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+.btn-wa {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.btn-wa:hover {
+  transform: scale(1.1);
+}
+
+/* ===== ANIMACIONES ===== */
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== BOTONES DE PASOS ===== */
+.step-btn.active {
+  background-color: #1a1a1a;
+  color: #ff6600;
+  border-color: #1a1a1a;
+}
+
+/* ===== INPUTS NUMBER ===== */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* ===== SCROLL PERSONALIZADO ===== */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 10px;
+}
+
+/* ===== UTILITIES DE COLOR (Naranja/Negro) ===== */
+.text-negro-principal {
+  color: #1a1a1a;
+}
+.text-naranja-principal {
+  color: #ff6600;
+}
+.bg-negro-principal {
+  background-color: #1a1a1a;
+}
+.bg-negro-medio {
+  background-color: #2d2d2d;
+}
+.border-naranja-principal {
+  border-color: #ff6600;
+}
+.hover\:bg-negro-medio:hover {
+  background-color: #2d2d2d;
+}
+.focus\:border-naranja-principal:focus {
+  border-color: #ff6600;
+}
